@@ -47,7 +47,7 @@ func start() int {
 		Port: port,
 	})
 
-	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM, syscall.SIGINFO)
+	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGTERM, syscall.SIGINT)
 	defer stop()
 	eg, ctx := errgroup.WithContext(ctx)
 
